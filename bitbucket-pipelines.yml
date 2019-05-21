@@ -1,0 +1,43 @@
+# Pipeline code to deploy file only, no build or test steps are used.
+# Reference URL : https://confluence.atlassian.com/bitbucket/configure-bitbucket-pipelines-yml-792298910.html
+# Only use spaces to indent your .yml configuration.
+# -----------
+# 1) git-ftp init  > Upload all files to server, initialize.
+# 2) git-ftp catchup > If files are already there in server,adds last commit to git-ftp-log. No file uploads.
+# 3) git-ftp push > Upload synced(new commited) files only.
+# 4) Default and Branches have 1st Step as auto trigger fixed. Rest of the steps can be manual triggered.
+# 5) Manually triggered steps will start the deployment setup process again.
+# 6) Steps in the default pipeline are performed on all branches unless specified otherwise.
+# 7) "No pipeline has run for the HEAD of master" will be removed when running pipelines using branch.
+# ----------
+# You can specify a custom docker image from Docker Hub as your build environment. (optional)
+# Example >> image: php:5.6.30 or image: php:7.1.1
+
+#image: php:7.1.1
+
+pipelines:
+  custom: # Pipelines that are triggered manually
+    deploy-catchup-live: # -- Deploys only files not present in server and files not in sync
+    - step:
+          name: Catchup with live last commit. No file push
+          deployment: production
+          script:
+          - apt-get update
+          - apt-get -qq install git-ftp
+          - git-ftp catchup --user $FTP_USERNAME --passwd $FTP_PASSWORD ftp://$FTP_HOST_PATH
+    deploy-push-live: # -- Deploys all files from the selected commit
+    - step:
+          name: Push to production
+          deployment: production
+          script:
+          - apt-get update
+          - apt-get -qq install git-ftp
+          - git-ftp push --user $FTP_USERNAME --passwd $FTP_PASSWORD ftp://$FTP_HOST_PATH
+    deploy-init-live: # -- Deploys all files 
+     - step:
+           name: Initialize production
+           deployment: production
+           script:
+           - apt-get update
+           - apt-get -qq install git-ftp
+           - git-ftp init --user $FTP_USERNAME --passwd $FTP_PASSWORD ftp://$FTP_HOST_PATH
