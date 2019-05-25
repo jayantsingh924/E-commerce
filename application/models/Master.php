@@ -7,6 +7,7 @@ class Master extends CI_Model
        parent::__construct();
     }
 
+
      public function check_login($user_name,$password)
      {
         $sql = $this->db->get_where('admin',array('email'=>$user_name,'password'=>$password));
@@ -86,6 +87,14 @@ class Master extends CI_Model
         
         return $this->db->insert_id();
     }
+     public function updatedata($id ,$table, $update_data)
+      { 
+       
+        $this->db->where('id', $id);
+        $this->db->update($table, $update_data);
+        echo $this->db->last_query();
+        return $id;
+    }
     public function getlatestPosts()
     {
         $query = "SELECT * FROM onepiece  ORDER BY id DESC LIMIT 5";
@@ -163,6 +172,39 @@ class Master extends CI_Model
            $query = $this->db->get();
            return $query->result();
     }
+
+      public function Count() 
+    {
+        $query=$this->db->query("select ( select count(*) from `onepiece` )
+       + ( select count(*) from `urinal` )
+       + ( select count(*) from `washbasin_pe` )
+       + ( select count(*) from `tabletop` )
+       + ( select count(*) from `washbasin` )
+       + ( select count(*) from `watercloset` )
+       + ( select count(*) from `seatcovers` )
+       + ( select count(*) from `pan` )
+       + ( select count(*) from `couplesuite` )
+       + ( select count(*) from `mattvitrassa_series` )
+       + ( select count(*) from `vitrassa_series` )
+       + ( select count(*) from `new_designer_series` )
+       + ( select count(*) from `rustic_series` )
+       + ( select count(*) from `vitrasa_washbasin` )
+       + ( select count(*) from `designer_tabletop` )
+       + ( select count(*) from `dual_color_one_piece` )
+       + ( select count(*) from `dual_color_orrisa_pan` )
+       + ( select count(*) from `rustic_water_closet` )
+       + ( select count(*) from `rustic_orrisa_pan` )
+       + ( select count(*) from `seat_cover_fitting` )
+       + ( select count(*) from `vitrassa` )
+     
+     
+          as total_rows");
+        //echo $this->db->last_query(); die();
+        
+        $result = $query->result_array();
+        return $result[0]['total_rows'];
+    }
+
       public function onepiece_Count($search_text=NULL,$table = NULL) 
     { 
 
@@ -182,19 +224,32 @@ class Master extends CI_Model
         return $result[0]['allcount'];
     }
       public function get_onepiece($search_text,$table)
-    { //print_r($search_text); print_r($table); die( 'here');
-           $this->db->select("*"); 
-           $this->db->from($table);
-            if($search_text != '')
-            {
-              $this->db->like('name', $search_text);
-              $this->db->or_like('reg_date', $search_text);
-            }
-           $query = $this->db->get();
-          // echo $this->db->last_query(); die();
-           return $query->result();
+    { 
+        $this->db->select("*"); 
+        $this->db->from($table);
+        if($search_text != '')
+          {
+            $this->db->like('name', $search_text);
+            $this->db->or_like('reg_date', $search_text);
+          }
+        $query = $this->db->get();
+        return $query->result();
     }
-     public function Washbasin_pe_Count() 
+
+       public function edit_product($id,$table)
+    { 
+   
+        $this->db->select("*"); 
+        $this->db->from($table);
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        $result = $query->result();
+        return $result[0];
+    }
+
+    
+
+      public function Washbasin_pe_Count() 
     {
 
         $this->db->select('count(*) as allcount');

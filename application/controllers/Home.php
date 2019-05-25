@@ -209,7 +209,7 @@ class Home extends CI_Controller {
 	public function addnew()
 	{
         $data['sanitry_product'] = $this->Master->getproduct();
-        $this->load->view('add',$data);
+        $this->load->view('crud/add',$data);
 	} 
 
 	public function add()
@@ -255,6 +255,40 @@ class Home extends CI_Controller {
             }
 			
 	  } 
+
+
+    public function edit($id)
+     { //print_r($_POST['edit']); die();
+
+      $id = $this->uri->segment(3);
+      $table = $this->uri->segment(4);
+    
+      if(@$_POST['edit'] == 'edit')
+        { 
+                $post = $this->input->post();
+                $update_data['name']=$post['name'];
+                $update_data['price']=$post['price'];
+                $update_data['model']=$post['model'];
+                $update_data['description']=$post['description'];
+               
+                $result=$this->Master->updatedata($id, $table, $update_data);
+             
+                if($this->db->affected_rows() > 0)
+                {
+                    redirect('/login/dashboard/es');
+                 }
+                else
+                {
+                    redirect('/auth/profile/ef');
+                }
+        }
+          $result = $this->Master->edit_product($id,$table);
+      $data['post'] = $result;
+       $this->load->view('crud/edit',$data);
+    }
+
+
+
 	  public function upload_file()
     {
             $config['upload_path']          = './uploads/';
@@ -320,20 +354,28 @@ class Home extends CI_Controller {
                     return $this->upload->data();
                 }
     }   
+
     public function dash_data($table) 
     {
-         $search_text = ""; 
-         if ($this->input->post() != '')
-           {
-              $search_text = $this->input->post('search');
-              $_SESSION["search"] = @$search_text;
-           }
+      $search_text = ""; 
+      if ($this->input->post() != '')
+        {
+          $search_text = $this->input->post('search');
+          $_SESSION["search"] = @$search_text;
+        }
       $allcount = $this->Master->onepiece_Count($search_text,$table);
       $data['count'] = $allcount;
       $data['posts'] = $this->Master->get_onepiece($search_text,$table);
-      //echo $this->db->last_query(); die(); 
-      $this->load->view('product_page/list', $data); 
+     $this->load->view('crud/list', $data); 
    } 
+
+   public function total_data()
+   {
+     $count = $this->Master->Count();
+     $data['count'] = $allcount;
+
+     $this->load->view('login/dashboard', $data);
+   }
 
 
 

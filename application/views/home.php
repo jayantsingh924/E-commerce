@@ -251,14 +251,14 @@
 						</div>
 							<div class="pi-text">
 					<!-- 		<h6><?php print_r($posts1[3]->price); ?></h6> -->
-							<p><?php print_r($posts1[3]->name); ?></p>
+							<p><?php print_r(@$posts1[3]->name); ?></p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
 					<div class="product-item">
 						<div class="pi-pic">
-							<img src="<?php echo base_url(); ?>uploads/<?php echo $posts2[0]->image_1; ?>" alt="">
+							<img src="<?php echo base_url(); ?>uploads/<?php echo @$posts2[0]->image_1; ?>" alt="">
 							<div class="pi-links">
 								<!-- <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
 								<?php if (!empty($posts2)) {
@@ -267,15 +267,15 @@
 							</div>
 						</div>
 						<div class="pi-text">
-							<h6><?php print_r($posts2[0]->price); ?></h6>
-							<p><?php print_r($posts2[0]->name); ?></p>
+							<!-- <h6><?php print_r(@$posts2[0]->price); ?></h6> -->
+							<p><?php print_r(@$posts2[0]->name); ?></p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
 					<div class="product-item">
 						<div class="pi-pic">
-							<img src="<?php echo base_url(); ?>uploads/<?php echo $posts2[1]->image_1; ?>" alt="">
+							<img src="<?php echo base_url(); ?>uploads/<?php echo @$posts2[1]->image_1; ?>" alt="">
 							<div class="pi-links">
 								<!-- <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
 								<?php if (!empty($posts2)) {
@@ -285,14 +285,14 @@
 						</div>
 							<div class="pi-text">
 					<!-- 		<h6><?php print_r($posts2[1]->price); ?></h6> -->
-							<p><?php print_r($posts2[1]->name); ?></p>
+							<p><?php print_r(@$posts2[1]->name); ?></p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
 					<div class="product-item">
 						<div class="pi-pic">
-							<img src="<?php echo base_url(); ?>uploads/<?php echo $posts2[2]->image_1; ?>" alt="">
+							<img src="<?php echo base_url(); ?>uploads/<?php echo @$posts2[2]->image_1; ?>" alt="">
 							<div class="pi-links">
 								<!-- <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
 								<?php if (!empty($posts2)) {
@@ -302,14 +302,14 @@
 						</div>
 							<div class="pi-text">
 						<!-- 	<h6><?php print_r($posts2[2]->price); ?></h6> -->
-							<p><?php print_r($posts2[2]->name); ?></p>
+							<p><?php print_r(@$posts2[2]->name); ?></p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
 					<div class="product-item">
 						<div class="pi-pic">
-							<img src="<?php echo base_url(); ?>uploads/<?php echo $posts2[3]->image_1; ?>" alt="">
+							<img src="<?php echo base_url(); ?>uploads/<?php echo @$posts2[3]->image_1; ?>" alt="">
 							<div class="pi-links">
 								<!-- <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
 								<?php if (!empty($posts2)) {
@@ -319,7 +319,7 @@
 						</div>
 						<div class="pi-text">
 							<!-- <h6><?php print_r($posts2[3]->price); ?></h6> -->
-							<p><?php print_r($posts2[3]->name); ?></p>
+							<p><?php print_r(@$posts2[3]->name); ?></p>
 						</div>
 					</div>
 				</div>

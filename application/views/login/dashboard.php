@@ -2,6 +2,8 @@
 <?php $this->load->view('include/header1.php');?>
 
 
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand animated rollIn" href="<?php echo base_url();?>home"><b>RAJDHANI TRADERS<b></a>
 
@@ -21,8 +23,24 @@
   </div>
 </nav>
 
-<div class="container" style="padding-top: 100px;">
+<div class="container" style="padding-top: 35px;">
+
+  <?php 
+$url =  $this->uri->segment(3);
+if ($url == 'es') 
+{
+  ?> <div class="animated rubberBand">
+        <div class="alert alert-dismissible alert-success">
+          <strong>Update Successfull</strong>
+        </div>
+      </div>
+  <?php
+}
+
+?>
+
 <div class="row">
+
 <div class="col animated slideInLeft">
 <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
 <div class="card-header" style="font-size: larger;">Urinals</div>
@@ -193,7 +211,7 @@
 </div>
 </div>
 
-<div class="container">
+<div class="container" style="padding-top: 35px;">
 <div class="row">
 <div class="col">
 <div class="jumbotron">
@@ -206,11 +224,17 @@
 <a class="btn btn-danger btn-lg" href="<?php echo base_url();?>Login/logout" role="button">Log Out</a>
 </div>
 </div>
-<a href="#" class="btn btn-info btn-lg btn-block">All Data</a>
+<div class="jumbotron btn-info" >
+  <h1 class="display-3"><?php echo "PRODUCT'S  </br><center><b>".$count;?></b></center></h1>
+
+</div>
 </div>
 </div>
 
-<div class="container" style="padding-top: 100px;">
+
+
+
+<div class="container" style="padding-top: 35px;">
 <div class="row">
 <div class="col animated slideInLeft">
 <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
@@ -435,6 +459,9 @@
 </div>
 </div>
 </div>
+
+</div>
+
 
 </div>
 </div>

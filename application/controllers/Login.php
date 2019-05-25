@@ -78,12 +78,13 @@ class Login extends CI_Controller {
         
 	    	 if (!empty($_SESSION['ad_uid']))
 	            {  
-                $allcount = $this->Master->onepiece_Count($a, $table = 'onepiece');
+                $allcount = $this->Master->onepiece_Count(@$a, $table = 'onepiece');
                 $data['onepiece'] = $allcount;
                 $allcount = $this->Master->Washbasin_pe_Count();
                 $data['washbasin_pe'] = $allcount;
                 $allcount = $this->Master->urinal_count();
                 $data['urinal'] = $allcount;
+                //print_r($allcount); die();
                 $allcount = $this->Master->tabletop_Count();
                 $data['tabletop'] = $allcount;
                 $allcount = $this->Master->Washbasin_Count();
@@ -120,6 +121,8 @@ class Login extends CI_Controller {
                 $data['rustic_orrisa_pan'] = $allcount;
                 $allcount = $this->Master->seat_cover_fitting_Count();
                 $data['seat_cover_fitting'] = $allcount;
+                $total_rows = $this->Master->Count();
+                $data['count'] = $total_rows;
                
                 $this->load->view('login/dashboard', $data);
                 
@@ -149,6 +152,7 @@ class Login extends CI_Controller {
 			           $_SESSION['ad_uid']= $user_data['id']; 
 		    	       $_SESSION['ad_uname']= $user_data['email']; 
 		             $_SESSION['ad_name']= $user_data['firstname'];
+                 $_SESSION['ad_name1']= $user_data['lastname'];
 
 		                //die('yaha');
 		                redirect('Login/dashboard');
