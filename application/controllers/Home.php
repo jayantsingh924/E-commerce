@@ -37,7 +37,7 @@ class Home extends CI_Controller {
     {
       
        $this->Master->deletedata($id,$table);
-          redirect('/Home/'.$table);
+          redirect('/login/dashboard/'.$table.'/d');
     }
 
   public function urinals_view()
@@ -246,7 +246,7 @@ class Home extends CI_Controller {
            
               if($result)
                 {
-                    redirect('/Login/dashboard');
+                    redirect('/Login/dashboard/as');
                 }
               else
                 {

@@ -1,16 +1,16 @@
 	<!-- Footer section -->
 	<section class="footer-section">
 		<div class="container">
-			<div class="footer-logo text-center">
+			<!-- <div class="footer-logo text-center">
 				<a href="<?php echo base_url();?>home" class="site-logo">
 							    <h4 style="color: #ea0057e3; font-family: initial;">Rajdhani Trader's</h4>
 						</a>
-			</div>
+			</div> -->
 			<div class="row">
 				<div class="col-lg-3 col-sm-6">
 					<div class="footer-widget about-widget">
-						<h2>About</h2>
-						<p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam frin-gilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
+						<h2>About US</h2>
+						<p>We know that how much Customer Satisfaction is important for Business.Rajdhani Traders put this very high during business,just give us a chance</p>
 						<img src="<?php echo base_url();?>assest/img/cards.png" alt="">
 					</div>
 				</div>

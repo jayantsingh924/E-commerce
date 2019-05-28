@@ -97,10 +97,7 @@
 				<div class="product-item">
 					<div class="pi-pic">
 						<img src="<?php echo base_url(); ?>uploads/<?php echo $posts[0]->image_1; ?>" alt="">
-						<div class="pi-links">
-							<!-- <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
-							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-						</div>
+					
 					</div>
 					<div class="pi-text">
 						<!-- <h6><?php print_r($posts[0]->price); ?> </h6> -->
@@ -111,10 +108,7 @@
 					<div class="pi-pic">
 						<div class="tag-new">New</div>
 						<img src="<?php echo base_url(); ?>uploads/<?php echo $posts[1]->image_1; ?>" alt="">
-						<div class="pi-links">
-						<!-- 	<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
-							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-						</div>
+						
 					</div>
 					<div class="pi-text">
 					<!-- 	<h6><?php print_r($posts[1]->price); ?> </h6> -->
@@ -124,10 +118,7 @@
 				<div class="product-item">
 					<div class="pi-pic">
 						<img src="<?php echo base_url(); ?>uploads/<?php echo $posts[2]->image_1; ?>" alt="">
-						<div class="pi-links">
-							<!-- <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
-							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-						</div>
+						
 					</div>
 					<div class="pi-text">
 						<!-- <h6><?php print_r($posts[2]->price); ?> </h6> -->
@@ -137,10 +128,7 @@
 				<div class="product-item">
 						<div class="pi-pic">
 							<img src="<?php echo base_url(); ?>uploads/<?php echo $posts[3]->image_1; ?>" alt="">
-							<div class="pi-links">
-							<!-- 	<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
-								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-							</div>
+							
 						</div>
 							<div class="pi-text">
 						<!-- <h6><?php print_r($posts[3]->price); ?> </h6> -->
@@ -150,10 +138,7 @@
 				<div class="product-item">
 						<div class="pi-pic">
 							<img src="<?php echo base_url(); ?>uploads/<?php echo $posts[4]->image_1; ?>" alt="">
-							<div class="pi-links">
-								<!-- <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
-								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-							</div>
+							
 						</div>
 						<div class="pi-text">
 					<!-- 	<h6><?php print_r($posts[4]->price); ?> </h6> -->
@@ -191,10 +176,7 @@
 						<div class="pi-pic">
 							<img src="<?php echo base_url(); ?>uploads/<?php echo $posts1[0]->image_1; ?>" alt="">
 							<div class="pi-links">
-								<!-- <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
-								<?php if (!empty($posts1)) {
-								?><a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a><?php
-								}?>
+								
 							</div>
 						</div>
 						<div class="pi-text">
@@ -209,10 +191,7 @@
 							<div class="tag-sale">ON SALE</div>
 							<img src="<?php echo base_url(); ?>uploads/<?php echo $posts1[1]->image_1; ?>" alt="">
 							<div class="pi-links">
-								<!-- <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
-								<?php if (!empty($posts1)) {
-								?><a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a><?php
-								}?>
+								
 							</div>
 						</div>
 							<div class="pi-text">
@@ -226,10 +205,7 @@
 						<div class="pi-pic">
 							<img src="<?php echo base_url(); ?>uploads/<?php echo $posts1[2]->image_1; ?>" alt="">
 							<div class="pi-links">
-								<!-- <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
-								<?php if (!empty($posts1)) {
-								?><a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a><?php
-								}?>
+							
 							</div>
 						</div>
 						<div class="pi-text">
@@ -243,10 +219,7 @@
 						<div class="pi-pic">
 							<img src="<?php echo base_url(); ?>uploads/<?php echo $posts1[3]->image_1; ?>" alt="">
 							<div class="pi-links">
-								<!-- <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
-								<?php if (!empty($posts1)) {
-								?><a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a><?php
-								}?>
+						
 							</div>
 						</div>
 							<div class="pi-text">
@@ -260,10 +233,7 @@
 						<div class="pi-pic">
 							<img src="<?php echo base_url(); ?>uploads/<?php echo @$posts2[0]->image_1; ?>" alt="">
 							<div class="pi-links">
-								<!-- <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
-								<?php if (!empty($posts2)) {
-								?><a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a><?php
-								}?>
+							
 							</div>
 						</div>
 						<div class="pi-text">
@@ -277,10 +247,7 @@
 						<div class="pi-pic">
 							<img src="<?php echo base_url(); ?>uploads/<?php echo @$posts2[1]->image_1; ?>" alt="">
 							<div class="pi-links">
-								<!-- <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
-								<?php if (!empty($posts2)) {
-								?><a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a><?php
-								}?>
+						
 							</div>
 						</div>
 							<div class="pi-text">
@@ -294,10 +261,7 @@
 						<div class="pi-pic">
 							<img src="<?php echo base_url(); ?>uploads/<?php echo @$posts2[2]->image_1; ?>" alt="">
 							<div class="pi-links">
-								<!-- <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
-								<?php if (!empty($posts2)) {
-								?><a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a><?php
-								}?>
+							
 							</div>
 						</div>
 							<div class="pi-text">
@@ -311,10 +275,7 @@
 						<div class="pi-pic">
 							<img src="<?php echo base_url(); ?>uploads/<?php echo @$posts2[3]->image_1; ?>" alt="">
 							<div class="pi-links">
-								<!-- <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a> -->
-								<?php if (!empty($posts2)) {
-								?><a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a><?php
-								}?>
+								
 							</div>
 						</div>
 						<div class="pi-text">

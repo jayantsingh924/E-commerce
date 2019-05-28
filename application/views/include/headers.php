@@ -41,13 +41,13 @@
 		<div class="header-top">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-4 text-center text-lg-left">
+					<div class="col-lg-3 text-center text-lg-left">
 						<!-- logo -->
 						<a href="<?php echo base_url();?>home" class="site-logo">
 							    <h4 style="color: #ea0057e3; font-family: initial;">Rajdhani Trader's</h4>
 						</a>
 					</div>
-					<div class="col-xl-5 col-lg-5">
+					<div class="col-xl-6 col-lg-5">
 						<form class="header-search-form">
 							<input type="text" placeholder="Search on divisima ....">
 							<button><i class="flaticon-search"></i></button>

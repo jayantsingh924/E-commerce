@@ -27,11 +27,28 @@
 
   <?php 
 $url =  $this->uri->segment(3);
+$url1 =  $this->uri->segment(4);
 if ($url == 'es') 
 {
   ?> <div class="animated rubberBand">
         <div class="alert alert-dismissible alert-success">
           <strong>Update Successfull</strong>
+        </div>
+      </div>
+  <?php
+}
+elseif ($url1 == 'd') {
+   ?> <div class="animated rubberBand">
+        <div class="alert alert-dismissible alert-danger">
+          <strong>Delete Successfull</strong>
+        </div>
+      </div>
+  <?php
+}
+elseif ($url == 'as') {
+   ?> <div class="animated rubberBand">
+        <div class="alert alert-dismissible alert-success">
+          <strong>Add Successfull</strong>
         </div>
       </div>
   <?php
@@ -209,27 +226,26 @@ if ($url == 'es')
 </div>
 </div>
 </div>
-</div>
 
-<div class="container" style="padding-top: 35px;">
+
+
 <div class="row">
-<div class="col">
-<div class="jumbotron">
-<h1 class="display-5"> Welcome <?php print_r($_SESSION['ad_name']);?></h1>
-  <br>
-  <p>Logged in : <?php 
-  $currentDate = date('Y-m-d h:i:s');
-  echo $currentDate;
-  ?></p>
-<a class="btn btn-danger btn-lg" href="<?php echo base_url();?>Login/logout" role="button">Log Out</a>
+     <div class="col">
+         <div class="jumbotron">
+             <h1> Welcome <?php print_r($_SESSION['ad_name']);?></h1>
+                 <br>
+                    <p>Logged in : <?php $currentDate = date('Y-m-d h:i:s');
+                        echo $currentDate;?>
+                    </p>
+            
+                        <a class="btn btn-danger btn-lg" 
+                           href="<?php echo base_url();?>Login/logout">Log Out</a>
+                           
+                           <h1><?php echo "<center><b>".$count;?></b><p>Total Product:</p> </center></h1>
+          </div>
+      </div>
 </div>
-</div>
-<div class="jumbotron btn-info" >
-  <h1 class="display-3"><?php echo "PRODUCT'S  </br><center><b>".$count;?></b></center></h1>
 
-</div>
-</div>
-</div>
 
 
 
